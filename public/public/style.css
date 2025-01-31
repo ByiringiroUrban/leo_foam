@@ -1,0 +1,161 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Form Container */
+.container {
+  max-width: 90%;
+  width: 600px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* Headings */
+h2, h3 {
+  text-align: center;
+  color: #333;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  animation: fadeIn 1s ease-in-out;
+  border-left: 4px solid #5cb85c;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input, Select, and Textarea Styling */
+input, select, textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  display: block;
+}
+
+/* Input Focus Effect */
+input:focus, select:focus, textarea:focus {
+  border-color: #5cb85c;
+  box-shadow: 0 0 8px rgba(92, 184, 92, 0.5);
+  transform: scale(1.02);
+}
+
+/* Multi-Column Layout for Inputs */
+.form-section div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-section div label,
+.form-section div input,
+.form-section div select {
+  flex: 1;
+  min-width: 48%;
+}
+
+/* Adjust Long Text Fields */
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Button Styling */
+button {
+  background: #5cb85c;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  animation: bounceIn 1.2s ease-in-out;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background: #4cae4c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .form-section div {
+    flex-direction: column;
+  }
+  
+  .form-section div label,
+  .form-section div input,
+  .form-section div select {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  h2, h3 {
+    font-size: 18px;
+  }
+  
+  input, select, textarea {
+    padding: 8px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
